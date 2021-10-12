@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y unzip git \
     && rm -r /var/lib/apt/lists/*
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
-RUN install-php-extensions pdo_mysql xdebug gd
+RUN install-php-extensions pdo_mysql xdebug gd pgsql pdo_pgsql
 
 RUN ln -s $PHP_INI_DIR/php.ini-development $PHP_INI_DIR/php.ini
 
