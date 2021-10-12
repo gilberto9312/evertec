@@ -147,3 +147,13 @@
 #36 /var/www/app/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #37 {main}
 "} 
+[2021-10-12 16:57:35] local.ERROR: There are no commands defined in the "ui" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"ui\" namespace. at /Users/gilbertoasuaje/Documents/evertec/codigo_fuente/app/vendor/symfony/console/Application.php:612)
+[stacktrace]
+#0 /Users/gilbertoasuaje/Documents/evertec/codigo_fuente/app/vendor/symfony/console/Application.php(663): Symfony\\Component\\Console\\Application->findNamespace('ui')
+#1 /Users/gilbertoasuaje/Documents/evertec/codigo_fuente/app/vendor/symfony/console/Application.php(255): Symfony\\Component\\Console\\Application->find('ui:auth')
+#2 /Users/gilbertoasuaje/Documents/evertec/codigo_fuente/app/vendor/symfony/console/Application.php(167): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /Users/gilbertoasuaje/Documents/evertec/codigo_fuente/app/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /Users/gilbertoasuaje/Documents/evertec/codigo_fuente/app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 /Users/gilbertoasuaje/Documents/evertec/codigo_fuente/app/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
