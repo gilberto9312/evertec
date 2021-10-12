@@ -1,14 +1,12 @@
 version: '3.4'
-
 services:
   php-apache:
-    container_name: app
+    container_name: evertec
     build:
       context: .
       dockerfile: Dockerfile
       args:
-        UID: '${U_ID}'
-        APP_XDEBUG_HOST: '${IP_DEBUG}'
+        APP_XDEBUG_HOST: '${IP_LOCAL}'
         APP_XDEBUG_PORT: '${PORT_DEBUG}'
     ports:
       - "${PORT_LOCAL}:80"
