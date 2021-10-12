@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  php-apache:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        UID: '${U_ID}'
+        APP_XDEBUG_HOST: '${IP_DEBUG}'
+        APP_XDEBUG_PORT: '${PORT_DEBUG}'
+    ports:
+      - "${PORT_LOCAL}:80"
+    working_dir: /var/www/app
+    volumes:
+      - ./:/var/www/app
+    networks:
+      - evertec
+networks:
+  evertec:
+    external: true
