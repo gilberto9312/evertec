@@ -109,9 +109,15 @@ class OrdersController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show($id)
     {
-        //
+        $params['id']=$id;
+        $order = event(new ProccessListOrderEvent($params));
+        
+        if(isset($order[0]['data'][0])){
+            return view("order.show",['order'=>$order[0]['data'][0]]);
+        }
+        return redirect()->route("home")->with(["mensaje_error" => "No existe orden",]);
     }
 
     /**

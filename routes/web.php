@@ -22,3 +22,5 @@ Route::get('/create', [App\Http\Controllers\OrdersController::class, 'create'])-
 Route::post('/create', [App\Http\Controllers\OrdersController::class, 'store'])->name('createOrderStore');
 Route::get('/edit/{id}', [App\Http\Controllers\OrdersController::class, 'edit'])->name('editOrder');
 Route::delete('/delete/{id}', [App\Http\Controllers\OrdersController::class, 'destroy'])->name('deleteOrder');
+
+Route::get('/show/{id}', [App\Http\Controllers\OrdersController::class, 'show'])->name('showOrder');

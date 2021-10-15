@@ -22,7 +22,7 @@
                         <thead>
                         <tr>
                             <th>Nombre</th>
-
+                            <th>Ver</th>
                             <th>Editar</th>
                             <th>Eliminar</th></tr>
                         </thead>
@@ -30,6 +30,11 @@
                         @foreach($orders as $order)
                             <tr>
                                 <td>{{$order->customer_email}}</td>
+                                <td>
+                                    <a class="btn btn-primary" href="{{route("showOrder",[$order->id])}}">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                </td>
                                 <td>
                                     <a class="btn btn-warning" href="{{route("editOrder",[$order->id])}}">
                                         <i class="fa fa-edit"></i>
