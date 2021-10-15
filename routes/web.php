@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\OrdersController::class, 'index'])->name('home');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\OrdersController::class, 'index'])->name('home');
+Route::get('/create', [App\Http\Controllers\OrdersController::class, 'create'])->name('createOrder');
+Route::post('/create', [App\Http\Controllers\OrdersController::class, 'store'])->name('createOrderStore');
+Route::get('/edit/{id}', [App\Http\Controllers\OrdersController::class, 'edit'])->name('editOrder');
+Route::delete('/delete/{id}', [App\Http\Controllers\OrdersController::class, 'destroy'])->name('deleteOrder');

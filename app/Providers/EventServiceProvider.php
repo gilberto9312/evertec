@@ -6,6 +6,13 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use App\Events\ValidateEvent;
+use App\Listeners\ValidateListener;
+use App\Events\ProccessOrderEvent;
+use App\Listeners\ProccessOrderListener;
+use App\Events\ProccessListOrderEvent;
+use App\Listeners\ProccessListOrderListener;
+
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -17,6 +24,15 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+        ],
+        ValidateEvent::class =>[
+            ValidateListener::class,
+        ],
+        ProccessOrderEvent::class =>[
+            ProccessOrderListener::class,
+        ],
+         ProccessListOrderEvent::class =>[
+            ProccessListOrderListener::class,
         ],
     ];
 
