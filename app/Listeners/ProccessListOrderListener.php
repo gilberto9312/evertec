@@ -36,6 +36,7 @@ class ProccessListOrderListener
         $id = isset($event->arr_parametros['id']) ? $event->arr_parametros['id'] : null;
 
         $query = DB::table('orders')
+                        ->where('user_id',auth()->id())
                         ->offset($offset)
                         ->limit($limit)
                         ->orderByDesc('id');

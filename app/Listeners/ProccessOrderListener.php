@@ -39,10 +39,15 @@ class ProccessOrderListener
                 $order = Order::find($id);
             }
 
+            $token = $this->generateInvoice();
+
             $order->customer_name=$name;
             $order->customer_email=$email;
             $order->customer_mobile=$phone;
-            $order->status=true;
+            $order->status='CREATED';
+            $order->user_id=auth()->id();
+            $order->invoice=$token;
+            $order->total=25000;
             $order->saveOrFail();    
             
             return [
@@ -60,6 +65,12 @@ class ProccessOrderListener
         
     }
 
+    private function generateInvoice(){
+
+        $token = uniqid('',true);
+        $id = explode('.',$token);
+        return $id[1];
+    }
     private function getParameter($params): array 
     {
         $id = $params['id'];

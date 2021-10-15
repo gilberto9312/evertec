@@ -10,5 +10,5 @@ class Order extends Model
     use HasFactory;
 
     protected $table = "orders";
-    protected $fillable = ["customer_name","customer_email","customer_mobile","status"];
+    protected $fillable = ["customer_name","customer_email","customer_mobile","status","user_id","invoice","total"];
 }

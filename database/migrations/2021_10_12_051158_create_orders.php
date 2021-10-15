@@ -23,10 +23,13 @@ class CreateOrders extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('invoice');
             $table->string('customer_name',80);
             $table->string('customer_email',120);
             $table->string('customer_mobile',40);
             $table->string('status',20);
+            $table->integer('user_id');
+            $table->float('total');
             $table->timestamps();
         });
     }

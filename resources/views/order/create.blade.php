@@ -8,8 +8,9 @@
             <div class="col-8">
                 <div class="card">
                     <div class="card-header">{{ __('Registro') }}</div>
-
+                        
                         <div class="card-body">
+                            <label class="label">Total $25.000</label>
                             <form method="POST" action="{{route("createOrderStore")}}">
                                 @csrf
                                 <input type="hidden" value="{{$order->id}}" name="id">
